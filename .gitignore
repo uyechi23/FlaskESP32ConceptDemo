@@ -2,6 +2,7 @@
 esp32.txt
 human.txt
 ~*.pptx
+*.token
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
