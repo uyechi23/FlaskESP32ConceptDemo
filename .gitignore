@@ -1,6 +1,7 @@
 # repository-specific gitignores
 esp32.txt
 human.txt
+~*.pptx
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
