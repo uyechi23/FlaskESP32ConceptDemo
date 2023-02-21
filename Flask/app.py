@@ -8,7 +8,7 @@ def humanpot(val):
     # check if data is valid (i.e., between 0-100)
     # if not valid, return a -1
     if not ((val >= 0.0) and (val <= 100.0)):
-        return "-1"
+        return "<h1>Invalid number; please enter a value between 0.0 and 100.0.<h1>"
     
     # add data to a text file called "human.txt"
     with open("human.txt", "a") as file:
