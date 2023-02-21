@@ -9,8 +9,8 @@
 const char* ssid     = "UPIoT";
 const char* password = "";
 
-// host - the main URL of the webpage you want to connect to; you can use the IP address of a Flask app
-const char host[] = "http://10.13.135.141:5000";
+// host - the main URL of the webpage you want to connect to
+// this uses the IP address of a Flask app
 const byte flaskappip[4] = {10, 13, 135, 141};
 
 // port - the port of the flask app
@@ -52,14 +52,10 @@ void loop() {
     // read potentiometer value and convert it to a percentage
     int pot_value = analogRead(POT_PIN);
     double pot_percentage = (double(pot_value))/(double(4095.0))*100;
-    Serial.println(String(pot_percentage));
     
     // connect to the client using the IP address and Port of the Flask App
     // set these values above - they can be found when running the Flask application
     if(client.connect(flaskappip, port)){
-      // success message
-      Serial.println("Connected!");
-    
       // send an HTTPS GET request
       client.print(String("GET ") + url + String(pot_percentage) + " HTTP/1.1\r\n" +
               "Host: " + host + "\r\n" +
@@ -90,6 +86,7 @@ void loop() {
     }
 
     // print out the data
+    Serial.print("The current average is: ");
     Serial.println(line);
     
     // delay 5 seconds; sensors can be implemented on a "polling" basis
