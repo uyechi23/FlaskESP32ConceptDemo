@@ -9,8 +9,8 @@
 const char* ssid     = "UPIoT";
 const char* password = "";
 
-// host - the main URL of the webpage you want to connect to
-// this uses the IP address of a Flask app
+// host - the main URL of the webpage you want to connect to; you can use the IP address of a Flask app
+const char host[] = "http://10.13.135.141:5000";
 const byte flaskappip[4] = {10, 13, 135, 141};
 
 // port - the port of the flask app
@@ -55,7 +55,7 @@ void loop() {
     
     // connect to the client using the IP address and Port of the Flask App
     // set these values above - they can be found when running the Flask application
-    if(client.connect(flaskappip, port)){
+    if(client.connect(flaskappip, port)){    
       // send an HTTPS GET request
       client.print(String("GET ") + url + String(pot_percentage) + " HTTP/1.1\r\n" +
               "Host: " + host + "\r\n" +
@@ -86,8 +86,9 @@ void loop() {
     }
 
     // print out the data
-    Serial.print("The current average is: ");
-    Serial.println(line);
+    Serial.print("The average value is: ");
+    Serial.print(line);
+    Serial.println("%");
     
     // delay 5 seconds; sensors can be implemented on a "polling" basis
     // so the Flask app continuously gets real-time data
