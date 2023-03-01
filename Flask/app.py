@@ -2,6 +2,11 @@ from flask import Flask
 
 app = Flask(__name__)
 
+# home route
+@app.route('/')
+def home():
+    return "Hello, CS427!"
+
 # Human Route
 @app.route('/potentiometer/human/<float:val>')
 def humanpot(val):
