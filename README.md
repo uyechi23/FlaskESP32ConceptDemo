@@ -12,7 +12,7 @@ git clone https://github.com/uyechi23/FlaskESP32ConceptDemo
 Once this is cloned, there will be two directories inside: Flask and ESP32.
 
 ### Flask Setup
-For the Flask application, we want to first start up a virtual environment. Run the following command:
+For the Flask application, we want to first start up a virtual environment. Run the following command (you might need to use python or python3 instead of py):
 ```
 py -m venv env
 ```
