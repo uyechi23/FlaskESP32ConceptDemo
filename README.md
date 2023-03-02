@@ -22,9 +22,15 @@ This will create a virtual environment called "env". Virtual environments are ra
 py -m pip install -r requirements.txt
 ```
 
-Then, activate the virtual environment (first line - Windows, second line - Mac/Linux):
+Then, activate the virtual environment:
+
+(For Windows)
 ```
 env\Scripts\activate
+```
+
+(For Mac/Linux)
+```
 source env/scripts/activate
 ```
 
