@@ -6,7 +6,7 @@ Note: The following are Windows-only instructions - I haven't had time or equipm
 ## Setup Instructions
 First, clone the repository to your computer:
 ```
-git clone https://https://github.com/uyechi23/FlaskESP32ConceptDemo
+git clone https://github.com/uyechi23/FlaskESP32ConceptDemo
 ```
 
 Once this is cloned, there will be two directories inside: Flask and ESP32.
@@ -22,9 +22,10 @@ This will create a virtual environment called "env". Virtual environments are ra
 py -m pip install -r requirements.txt
 ```
 
-Then, activate the virtual environment:
+Then, activate the virtual environment (first line - Windows, second line - Mac/Linux):
 ```
 env\Scripts\activate
+source env/scripts/activate
 ```
 
 You should now be able to run the Flask app using the following command:
